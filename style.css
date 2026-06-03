@@ -1,0 +1,109 @@
+/* 기본 스타일 초기화 및 배경 설정 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    color: #333;
+    padding: 40px 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #7f8c8d;
+}
+
+/* 카드 컨테이너 그리드 설정 */
+.card-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+/* 체크박스 숨기기 */
+.card-toggle {
+    display: none;
+}
+
+/* 카드 기본 형태 정의 */
+.book-card {
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+/* 라벨을 버튼처럼 사용 */
+.card-content {
+    display: block;
+    cursor: pointer;
+    padding: 30px;
+}
+
+/* 카드 앞면 (제목 부분) */
+.card-front .chapter-num {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #3498db;
+    background: #e8f4fd;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+}
+
+.card-front h2 {
+    font-size: 1.3rem;
+    color: #2c3e50;
+    line-height: 1.4;
+}
+
+/* 카드 뒷면 (숨겨진 본문 부분) */
+.card-back {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease, margin-top 0.3s ease;
+}
+
+.card-back p {
+    color: #555;
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+/* ★ 핵심 기능: 체크박스가 체크되었을 때 (카드가 클릭되었을 때) */
+.card-toggle:checked + .card-content .card-back {
+    max-height: 300px; /* 본문 내용이 들어갈 수 있도록 넉넉하게 설정 */
+    opacity: 1;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px dashed #e0e0e0;
+}
+
+/* 클릭 시 제목 색상 변경 효과 */
+.card-toggle:checked + .card-content .card-front h2 {
+    color: #3498db;
+}
