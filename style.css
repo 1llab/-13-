@@ -6,155 +6,128 @@
 }
 
 body {
-    background-color: #f8f9fa;
-    color: #333;
-    padding: 60px 20px;
+    background-color: #111; /* 묵직한 다크 모드 배경 */
+    overflow: hidden; /* 화면 전체를 쓸 때 스크롤바가 생기지 않도록 방지 */
 }
 
-header {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-header h1 {
-    font-size: 2.2rem;
-    color: #1a252f;
-    margin-bottom: 12px;
-}
-
-header p {
-    color: #95a5a6;
-}
-
-/* 대형 모니터/노트북에 최적화된 그리드 */
-.card-container {
-    max-width: 1200px;
-    margin: 0 auto;
+/* 화면을 꽉 채우는 3x3 그리드 설정 */
+.grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 15px;
+    width: 100vw;
+    height: 100vh;
+    padding: 15px;
 }
 
-.card-toggle {
-    display: none;
-}
-
-/* 평소 카드 스타일 */
-.book-card {
-    background: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    border: 1px solid #eaeaea;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.book-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-}
-
-.card-content {
-    display: block;
-    padding: 40px;
+/* 기본 카드 스타일 */
+.card {
+    background: #222;
+    border: 1px solid #333;
+    border-radius: 12px;
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    
+    /* 애니메이션 효과 속도 설정 */
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: 1;
 }
 
-.card-front .chapter-num {
-    font-size: 0.8rem;
+.card:hover {
+    background: #2a2a2a;
+    border-color: #555;
+}
+
+/* 카드 앞면 (썸네일 상태) */
+.card-front {
+    padding: 30px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.slide-num {
+    color: #00ff88;
+    font-size: 0.85rem;
     font-weight: bold;
-    color: #2ecc71;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 15px;
-    display: block;
+    margin-bottom: 10px;
 }
 
 .card-front h2 {
-    font-size: 1.4rem;
-    color: #2c3e50;
-    margin-bottom: 15px;
+    color: #fff;
+    font-size: 1.3rem;
 }
 
-.card-front .preview {
-    font-size: 0.9rem;
-    color: #7f8c8d;
-}
-
-/* ★ PPT 전체화면 슬라이드 구현 (평소에는 숨김 및 투명) */
+/* 카드 뒷면 (평소에는 완전히 숨김) */
 .card-back {
+    display: none; 
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+/* ★ 핵심: 클릭되어 전체화면이 된 카드의 상태 */
+.card.active {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(26, 37, 47, 0.98); /* 고급스러운 다크 모드 PPT 배경 */
-    z-index: 9999;
+    border-radius: 0;
+    border: none;
+    background: #0f172a; /* 발표용 고급스러운 네이비 블랙 */
+    z-index: 9999; /* 다른 모든 카드 위에 올라오도록 설정 */
+    padding: 60px;
+}
+
+/* 전체화면일 때 내부 내용 보여주기 */
+.card.active .card-front {
+    display: none; /* 앞면 글자는 숨김 */
+}
+
+.card.active .card-back {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    
-    /* 애니메이션 초기 상태 */
-    opacity: 0;
-    pointer-events: none;
-    transform: scale(0.9);
-    transition: opacity 0.4s ease, transform 0.4s ease;
+    height: 100%;
+    opacity: 1;
 }
 
-/* PPT 내부 콘텐츠 배치 */
+/* PPT 본문 텍스트 디자인 */
 .ppt-content {
-    width: 80%;
     max-width: 1000px;
-    color: #ffffff;
-    position: relative;
-    padding: 40px;
+    margin: 0 auto;
+    color: #fff;
 }
 
+.ppt-content h1 {
+    font-size: 3.5rem;
+    color: #00ff88;
+    margin-bottom: 30px;
+}
+
+.ppt-content p {
+    font-size: 1.6rem;
+    line-height: 1.8;
+    color: #cbd5e1;
+}
+
+/* 우측 상단 닫기 버튼 */
 .close-btn {
     position: absolute;
-    top: -40px;
-    right: 0;
-    font-size: 1.1rem;
-    color: #bdc3c7;
-    background: rgba(255,255,255,0.1);
-    padding: 8px 18px;
+    top: 40px;
+    right: 40px;
+    color: #94a3b8;
+    font-size: 1.2rem;
+    background: rgba(255,255,255,0.05);
+    padding: 10px 20px;
     border-radius: 30px;
     transition: 0.2s;
 }
 
 .close-btn:hover {
-    background: #e74c3c;
+    background: #ef4444;
     color: white;
-}
-
-.ppt-meta {
-    font-size: 1.1rem;
-    color: #2ecc71;
-    font-weight: bold;
-}
-
-.ppt-title {
-    font-size: 3rem; /* PPT 발표용 대형 서체 */
-    margin-top: 10px;
-    margin-bottom: 20px;
-    font-weight: 700;
-}
-
-.ppt-content hr {
-    border: none;
-    height: 2px;
-    background: #34495e;
-    margin-bottom: 40px;
-}
-
-.ppt-text {
-    font-size: 1.4rem; /* 노트북에서 읽기 편한 폰트 크기 */
-    line-height: 1.8;
-    color: #ecf0f1;
-}
-
-/* ★ 카드가 체크(클릭)되었을 때 전체화면으로 정중앙에 띄우기 */
-.card-toggle:checked + .card-content .card-back {
-    opacity: 1;
-    pointer-events: auto;
-    transform: scale(1);
 }
