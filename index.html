@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>북 카드 라이브러리</title>
+    <title>PPT 스타일 북 카드</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <h1>원하는 장을 선택해서 읽어보세요</h1>
-        <p>카드를 클릭하면 상세 내용이 나타납니다.</p>
+        <h1>PPT 스타일 도서 라이브러리</h1>
+        <p>카드를 클릭하면 해당 장이 화면 전체에 슬라이드처럼 펼쳐집니다.</p>
     </header>
 
     <main class="card-container">
@@ -19,11 +19,21 @@
             <input type="checkbox" id="card1" class="card-toggle">
             <label for="card1" class="card-content">
                 <div class="card-front">
-                    <span class="chapter-num">01장</span>
+                    <span class="chapter-num">Slide 01</span>
                     <h2>시작하며: 새로운 여정</h2>
+                    <p class="preview">이 장의 요약 보기...</p>
                 </div>
                 <div class="card-back">
-                    <p>이 책의 첫 장에서는 우리가 앞으로 다룰 핵심 개념들을 소개합니다. 모든 위대한 일은 작은 첫 걸음부터 시작됩니다. 준비가 되었다면 다음 장으로 넘어가 보세요.</p>
+                    <div class="ppt-content">
+                        <span class="close-btn">닫기 ✕</span>
+                        <span class="ppt-meta">01장. 시작하며</span>
+                        <h2 class="ppt-title">새로운 여정의 서막</h2>
+                        <hr>
+                        <p class="ppt-text">
+                            이 책의 첫 장에서는 우리가 앞으로 다룰 핵심 개념들을 소개합니다. <br><br>
+                            모든 위대한 일은 작은 첫 걸음부터 시작됩니다. 노트북과 데스크톱 환경에 최적화된 이 화면은 PPT 발표 슬라이드처럼 몰입감 있는 독서 환경을 제공합니다. 준비가 되었다면 닫기 버튼을 누르고 다음 장으로 넘어가 보세요.
+                        </p>
+                    </div>
                 </div>
             </label>
         </div>
@@ -32,24 +42,21 @@
             <input type="checkbox" id="card2" class="card-toggle">
             <label for="card2" class="card-content">
                 <div class="card-front">
-                    <span class="chapter-num">02장</span>
+                    <span class="chapter-num">Slide 02</span>
                     <h2>본론: 몰입의 즐거움</h2>
+                    <p class="preview">이 장의 요약 보기...</p>
                 </div>
                 <div class="card-back">
-                    <p>집중과 몰입은 어떻게 우리의 삶을 바꿀까요? 무언가에 깊게 빠져드는 순간, 시간은 다르게 흐르기 시작합니다. 이 장에서는 몰입을 방해하는 요소들을 제거하는 방법을 배웁니다.</p>
-                </div>
-            </label>
-        </div>
-
-        <div class="book-card">
-            <input type="checkbox" id="card3" class="card-toggle">
-            <label for="card3" class="card-content">
-                <div class="card-front">
-                    <span class="chapter-num">03장</span>
-                    <h2>마무리: 지속 가능한 성장</h2>
-                </div>
-                <div class="card-back">
-                    <p>지속적인 성장을 위해서는 단순한 열정뿐만 아니라 시스템이 필요합니다. 습관을 형성하고 이를 유지하는 구체적인 가이드라인을 제공합니다.</p>
+                    <div class="ppt-content">
+                        <span class="close-btn">닫기 ✕</span>
+                        <span class="ppt-meta">02장. 본론</span>
+                        <h2 class="ppt-title">몰입이 가져오는 변화</h2>
+                        <hr>
+                        <p class="ppt-text">
+                            집중과 몰입은 어떻게 우리의 삶을 바꿀까요? <br><br>
+                            무언가에 깊게 빠져드는 순간, 시간은 다르게 흐르기 시작합니다. 이 장에서는 뇌 과학적 관점에서 몰입의 메커니즘을 설명하고, 일상 생활에서 몰입을 방해하는 스마트폰이나 알림 등의 요소를 지혜롭게 제거하는 구체적인 방법을 배웁니다.
+                        </p>
+                    </div>
                 </div>
             </label>
         </div>
