@@ -3,65 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PPT 스타일 북 카드</title>
+    <title>PPT 스타일 3x3 카드</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>PPT 스타일 도서 라이브러리</h1>
-        <p>카드를 클릭하면 해당 장이 화면 전체에 슬라이드처럼 펼쳐집니다.</p>
-    </header>
-
-    <main class="card-container">
-        
-        <div class="book-card">
-            <input type="checkbox" id="card1" class="card-toggle">
-            <label for="card1" class="card-content">
-                <div class="card-front">
-                    <span class="chapter-num">Slide 01</span>
-                    <h2>시작하며: 새로운 여정</h2>
-                    <p class="preview">이 장의 요약 보기...</p>
+    <div class="grid-container">
+        <div class="card" onclick="toggleCard(this)">
+            <div class="card-front">
+                <span class="slide-num">Slide 01</span>
+                <h2>첫 번째 이야기</h2>
+            </div>
+            <div class="card-back">
+                <span class="close-btn">닫기 ✕</span>
+                <div class="ppt-content">
+                    <h1>01. 새로운 시작</h1>
+                    <p>여기에 첫 번째 장의 상세 내용을 입력하세요. 화면을 상하좌우로 꽉 채운 PPT 슬라이드 스타일입니다.</p>
                 </div>
-                <div class="card-back">
-                    <div class="ppt-content">
-                        <span class="close-btn">닫기 ✕</span>
-                        <span class="ppt-meta">01장. 시작하며</span>
-                        <h2 class="ppt-title">새로운 여정의 서막</h2>
-                        <hr>
-                        <p class="ppt-text">
-                            이 책의 첫 장에서는 우리가 앞으로 다룰 핵심 개념들을 소개합니다. <br><br>
-                            모든 위대한 일은 작은 첫 걸음부터 시작됩니다. 노트북과 데스크톱 환경에 최적화된 이 화면은 PPT 발표 슬라이드처럼 몰입감 있는 독서 환경을 제공합니다. 준비가 되었다면 닫기 버튼을 누르고 다음 장으로 넘어가 보세요.
-                        </p>
-                    </div>
-                </div>
-            </label>
+            </div>
         </div>
 
-        <div class="book-card">
-            <input type="checkbox" id="card2" class="card-toggle">
-            <label for="card2" class="card-content">
-                <div class="card-front">
-                    <span class="chapter-num">Slide 02</span>
-                    <h2>본론: 몰입의 즐거움</h2>
-                    <p class="preview">이 장의 요약 보기...</p>
+        <div class="card" onclick="toggleCard(this)">
+            <div class="card-front">
+                <span class="slide-num">Slide 02</span>
+                <h2>두 번째 이야기</h2>
+            </div>
+            <div class="card-back">
+                <span class="close-btn">닫기 ✕</span>
+                <div class="ppt-content">
+                    <h1>02. 몰입의 순간</h1>
+                    <p>여기에 두 번째 장의 내용을 입력하세요. 데스크톱 화면에서 가독성이 아주 좋습니다.</p>
                 </div>
-                <div class="card-back">
-                    <div class="ppt-content">
-                        <span class="close-btn">닫기 ✕</span>
-                        <span class="ppt-meta">02장. 본론</span>
-                        <h2 class="ppt-title">몰입이 가져오는 변화</h2>
-                        <hr>
-                        <p class="ppt-text">
-                            집중과 몰입은 어떻게 우리의 삶을 바꿀까요? <br><br>
-                            무언가에 깊게 빠져드는 순간, 시간은 다르게 흐르기 시작합니다. 이 장에서는 뇌 과학적 관점에서 몰입의 메커니즘을 설명하고, 일상 생활에서 몰입을 방해하는 스마트폰이나 알림 등의 요소를 지혜롭게 제거하는 구체적인 방법을 배웁니다.
-                        </p>
-                    </div>
-                </div>
-            </label>
+            </div>
         </div>
 
-    </main>
+        <div class="card" onclick="toggleCard(this)">
+            <div class="card-front"><span class="slide-num">Slide 03</span><h2>세 번째 이야기</h2></div>
+            <div class="card-back"><span class="close-btn">닫기 ✕</span><div class="ppt-content"><h1>03. 본론 내용</h1><p>세 번째 카드 내용입니다.</p></div></div>
+        </div>
+        <div class="card" onclick="toggleCard(this)">
+            <div class="card-front"><span class="slide-num">Slide 04</span><h2>네 번째 이야기</h2></div>
+            <div class="card-back"><span class="close-btn">닫기 ✕</span><div class="ppt-content"><h1>04. 본론 내용</h1><p>네 번째 카드 내용입니다.</p></div></div>
+        </div>
+        <div class="card" onclick="toggleCard(this)">
+            <div class="card-front"><span class="slide-num">Slide 05</span><h2>다섯 번째 이야기</h2></div>
+            <div class="card-back"><span class="close-btn">닫기 ✕</span><div class="ppt-content"><h1>05. 핵심 요약</h1><p>다섯 번째 카드 내용입니다.</p></div></div>
+        </div>
+        <div class="card" onclick="toggleCard(this)">
+            <div class="card-front"><span class="slide-num">Slide 06</span><h2>여섯 번째 이야기</h2></div>
+            <div class="card-back"><span class="close-btn">닫기 ✕</span><div class="ppt-content"><h1>06. 심화 분석</h1><p>여섯 번째 카드 내용입니다.</p></div></div>
+        </div>
+        <div class="card" onclick="toggleCard(this)">
+            <div class="card-front"><span class="slide-num">Slide 07</span><h2>일곱 번째 이야기</h2></div>
+            <div class="card-back"><span class="close-btn">닫기 ✕</span><div class="ppt-content"><h1>07. 실전 적용</h1><p>일곱 번째 카드 내용입니다.</p></div></div>
+        </div>
+        <div class="card" onclick="toggleCard(this)">
+            <div class="card-front"><span class="slide-num">Slide 08</span><h2>여덟 번째 이야기</h2></div>
+            <div class="card-back"><span class="close-btn">닫기 ✕</span><div class="ppt-content"><h1>08. 결론 도출</h1><p>여덟 번째 카드 내용입니다.</p></div></div>
+        </div>
+        <div class="card" onclick="toggleCard(this)">
+            <div class="card-front"><span class="slide-num">Slide 09</span><h2>마지막 이야기</h2></div>
+            <div class="card-back"><span class="close-btn">닫기 ✕</span><div class="ppt-content"><h1>09. 에필로그</h1><p>마지막 카드 내용입니다.</p></div></div>
+        </div>
+    </div>
 
+    <script src="script.js"></script>
 </body>
 </html>
