@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #111; /* 묵직한 다크 모드 배경 */
+    background-color: #6bb3c0; /* 묵직한 다크 모드 배경 */
     overflow: hidden; /* 화면 전체를 쓸 때 스크롤바가 생기지 않도록 방지 */
 }
 
@@ -23,8 +23,8 @@ body {
 
 /* 기본 카드 스타일 */
 .card {
-    background: #222;
-    border: 1px solid #333;
+    background: #ddd6c6;
+    border: 1px solid #d1342f;
     border-radius: 12px;
     cursor: pointer;
     position: relative;
@@ -35,8 +35,8 @@ body {
 }
 
     .card:hover {
-        background: #2a2a2a;
-        border-color: #555;
+        background: #71c4b1;
+        border-color: #d1342f;
     }
 
 /* 카드 앞면 (썸네일 상태) */
@@ -49,14 +49,14 @@ body {
 }
 
 .slide-num {
-    color: #00ff88;
+    color: #638a93;
     font-size: 0.85rem;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
 .card-front h2 {
-    color: #fff;
+    color: #d1342f;
     font-size: 1.3rem;
 }
 
