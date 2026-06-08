@@ -138,11 +138,35 @@ body {
     color: white;
 }
 
-/* 카드 내부 이미지 스타일 조절 */
-.card-img {
-    width: 100%;       /* 카드의 가로 폭에 꽉 차게 조절 */
-    height: 150px;     /* 원하는 세로 높이 지정 */
-    object-fit: cover; /* 이미지가 찌그러지지 않고 비율을 유지하며 채우도록 설정 */
-    border-radius: 8px;/* 이미지 모서리를 살짝 둥글게 */
-    margin-top: 15px;  /* 위쪽 글씨와의 간격 */
+/* PPT 화면 내부 이미지 레이아웃 */
+.visual-slide {
+    display: flex;
+    align-items: center;
+    gap: 50px; /* 이미지와 글자 사이의 간격 */
+}
+
+/* PPT용 대형 이미지 스타일 */
+.ppt-img {
+    width: 45%;          /* 화면 왼쪽의 약 절반을 차지 */
+    max-height: 60vh;    /* 노트북 세로 화면을 넘어가지 않도록 제한 */
+    object-fit: contain; /* 이미지 비율을 깨뜨리지 않고 온전히 보여줌 */
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); /* 이미지 뒤에 은은한 그림자 */
+}
+
+/* 이미지 옆 텍스트 영역 폭 조절 */
+.ppt-text-zone {
+    width: 55%;
+}
+
+.ppt-text-zone h1 {
+    font-size: 3.5rem;
+    color: #00ff88;
+    margin-bottom: 25px;
+}
+
+.ppt-text-zone p {
+    font-size: 1.6rem;
+    line-height: 1.8;
+    color: #cbd5e1;
 }
