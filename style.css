@@ -31,7 +31,7 @@ body {
     overflow: hidden;
     
     /* 애니메이션 효과 속도 설정 */
-    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    transition: all 0.75s cubic-bezier(0.25, 1, 0.5, 1);
     z-index: 1;
 }
 
