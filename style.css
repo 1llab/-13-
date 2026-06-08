@@ -185,3 +185,32 @@ body {
         letter-spacing: -0.5px;
         text-align: justify; /* 양끝 정렬 유지 */
     }
+
+/* 이모지가 튀어나올 기준점 설정 */
+.img-wrapper {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* 튀어나오는 이모지 기본 스타일 */
+.burst-emoji {
+    position: fixed; /* 화면 기준으로 절대 위치 */
+    pointer-events: none; /* 이모지가 마우스 클릭을 방해하지 않도록 설정 */
+    font-size: 2rem; /* 이모지 크기 */
+    z-index: 10005; /* 전체화면보다 위에 뜨도록 설정 */
+    animation: flyAway 0.8s ease-out forwards; /* 0.8초 동안 날아감 */
+}
+
+/* 역동적으로 날아가며 작아지고 투명해지는 애니메이션 */
+@keyframes flyAway {
+    0% {
+        transform: translate(-50%, -50%) translate(0, 0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        /* 각 이모지마다 자바스크립트로 지정해 준 방향(--x, --y)으로 날아감 */
+        transform: translate(-50%, -50%) translate(var(--x), var(--y)) scale(0.3);
+        opacity: 0;
+    }
+}
