@@ -137,3 +137,12 @@ body {
     background: #ef4444;
     color: white;
 }
+
+/* 카드 내부 이미지 스타일 조절 */
+.card-img {
+    width: 100%;       /* 카드의 가로 폭에 꽉 차게 조절 */
+    height: 150px;     /* 원하는 세로 높이 지정 */
+    object-fit: cover; /* 이미지가 찌그러지지 않고 비율을 유지하며 채우도록 설정 */
+    border-radius: 8px;/* 이미지 모서리를 살짝 둥글게 */
+    margin-top: 15px;  /* 위쪽 글씨와의 간격 */
+}
