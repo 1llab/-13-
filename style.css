@@ -151,17 +151,16 @@ body {
 }
 
 .ppt-img {
-    width: 28%; /* ★ 기존 23%에서 28%로 늘려서 사진 크기를 키움 */
-    max-height: 75vh; /* 사진이 더 커질 수 있도록 최대 세로 제한도 75vh로 살짝 확장 */
-    object-fit: contain; /* 비율 유지 속성 */
-    border-radius: 16px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-    flex-shrink: 0;
-    align-self: center; /* 세로 중앙 정렬 유지 */
+    width: 100%;             /* wrapper의 너비(28%)를 꽉 채우게 설정 */
+    max-height: 75vh;        /* 아까 맞춰둔 최대 세로 높이 */
+    object-fit: contain;     /* 비율 유지 */
+    border-radius: 16px;     /* 모서리 둥글게 */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); /* 그림자 유지 */
+    display: block;          /* 하단 불필요한 공백 제거 */
 }
 
 .ppt-text-zone {
-    width: 69%; /* ★ 사진이 커진 만큼, 기존 74%에서 69%로 줄여서 균형을 맞춤 */
+    width: 69%;              
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -191,6 +190,9 @@ body {
     position: relative;
     display: inline-block;
     cursor: pointer;
+    width: 28%;              /* 가로 너비 아까처럼 확장 */
+    align-self: center;      /* 세로 기준 완벽한 중앙 정렬 */
+    flex-shrink: 0;          /* 크기 고정 */
 }
 
 /* 튀어나오는 이모지 기본 스타일 */
