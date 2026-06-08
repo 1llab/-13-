@@ -200,7 +200,7 @@ body {
 .burst-emoji {
     position: fixed; /* 화면 기준으로 절대 위치 */
     pointer-events: none; /* 이모지가 마우스 클릭을 방해하지 않도록 설정 */
-    font-size: 2rem; /* 이모지 크기 */
+    font-size: 4rem; /* 이모지 크기 */
     z-index: 10005; /* 전체화면보다 위에 뜨도록 설정 */
     animation: flyAway 0.8s ease-out forwards; /* 0.8초 동안 날아감 */
 }
