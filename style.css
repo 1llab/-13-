@@ -30,7 +30,7 @@ body {
     position: relative;
     overflow: hidden;
     /* 애니메이션 효과 속도 설정 */
-    transition: all 0.75s cubic-bezier(0.25, 1, 0.5, 1);
+    transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.45s cubic-bezier(0.25, 1, 0.5, 1);
     z-index: 1;
 }
 
@@ -129,7 +129,7 @@ body {
     background: rgba(255,255,255,0.05);
     padding: 10px 20px;
     border-radius: 30px;
-    transition: 0.2s;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
     .close-btn:hover {
@@ -163,7 +163,7 @@ body {
 }
 
 .img-wrapper:hover .ppt-img {
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 20px 36px rgba(0, 0, 0, 0.45);
 }
 
 .ppt-text-zone {
@@ -247,4 +247,158 @@ body {
 
 .card:nth-child(2) .img-wrapper:hover {
     transform: none !important;
+}
+.pepper-flip-card {
+    perspective: 1200px;
+}
+
+.pepper-flip-inner {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    transform-style: preserve-3d;
+    transition: transform 0.65s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.pepper-flip-card.flipped .pepper-flip-inner {
+    transform: rotateY(180deg);
+}
+
+.pepper-flip-face {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    backface-visibility: hidden;
+}
+
+.pepper-flip-back {
+    transform: rotateY(180deg);
+}
+.photo-stack {
+    width: 30%;
+    aspect-ratio: 4 / 5;
+    perspective: 1000px;
+}
+
+.photo-stack:hover {
+    transform: translateY(-8px) scale(1.02);
+}
+
+.stack-photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    object-fit: contain;
+    border-radius: 12px;
+    transform-origin: 50% 90%;
+    transition: transform 0.52s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.52s ease, box-shadow 0.35s ease;
+}
+
+.stack-photo-3 {
+    z-index: 1;
+    opacity: 0.72;
+    transform: translate(24px, 24px) scale(0.92);
+}
+
+.stack-photo-2 {
+    z-index: 2;
+    opacity: 0.88;
+    transform: translate(12px, 12px) scale(0.96);
+}
+
+.stack-photo-1 {
+    z-index: 3;
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+}
+
+.photo-stack.is-flying .stack-photo-1 {
+    animation: flyPhotoAway 0.95s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.photo-stack.is-flying .stack-photo-2 {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+}
+
+.photo-stack.is-flying .stack-photo-3 {
+    opacity: 0.88;
+    transform: translate(12px, 12px) scale(0.96);
+}
+
+@keyframes flyPhotoAway {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0) scale(1) rotate(0deg);
+    }
+
+    52% {
+        opacity: 1;
+        transform: translate(150px, -145px) scale(0.96) rotate(18deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(340px, -255px) scale(0.84) rotate(32deg);
+    }
+}
+.grain-slide {
+    position: relative;
+    overflow: hidden;
+}
+
+.grain-field {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.grain-text-zone {
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+    user-select: none;
+}
+
+.corn-grain {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 15px;
+    height: 8px;
+    border-radius: 999px;
+    background: #facc15;
+    box-shadow: inset -2px -1px 0 rgba(146, 64, 14, 0.22), 0 3px 5px rgba(0, 0, 0, 0.28);
+    transform: translate(var(--start-x), -24px) rotate(0deg);
+    animation: cornGrainFall 1.15s cubic-bezier(0.18, 0.78, 0.28, 1) forwards;
+}
+
+@keyframes cornGrainFall {
+    0% {
+        transform: translate(var(--start-x), -28px) rotate(0deg);
+        opacity: 0;
+    }
+
+    14% {
+        opacity: 1;
+    }
+
+    72% {
+        transform: translate(var(--mid-x), calc(var(--end-y) - 34px)) rotate(var(--mid-rotation));
+    }
+
+    86% {
+        transform: translate(var(--end-x), calc(var(--end-y) + 10px)) rotate(var(--bounce-rotation));
+    }
+
+    100% {
+        transform: translate(var(--end-x), var(--end-y)) rotate(var(--rotation));
+        opacity: 1;
+    }
 }
