@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #6bb3c0; /* 배경 */
+    background-color: #6bb3c0; /* 묵직한 다크 모드 배경 */
     overflow: hidden; /* 화면 전체를 쓸 때 스크롤바가 생기지 않도록 방지 */
 }
 
@@ -80,7 +80,7 @@ body {
     height: 100vh;
     border-radius: 0;
     border: none;
-    background: #cbd5e1;
+    background: #0f172a; /* 발표용 고급스러운 네이비 블랙 */
     z-index: 9999; /* 다른 모든 카드 위에 올라오도록 설정 */
     padding: 60px;
 }
@@ -95,7 +95,7 @@ body {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        /* 활성화되는 순간 부드럽게 나타남 */
+        /* ★ 여기가 핵심: 활성화되는 순간 부드럽게 나타남 */
         opacity: 1;
         transform: scale(1);
     }
@@ -109,15 +109,14 @@ body {
 
     .ppt-content h1 {
         font-size: 3.5rem;
-        color: #ff0088;
+        color: #00ff88;
         margin-bottom: 30px;
     }
 
     .ppt-content p {
         font-size: 1.6rem;
         line-height: 1.8;
-        color: #0f172a;
-        
+        color: #cbd5e1;
     }
 
 /* 우측 상단 닫기 버튼 */
@@ -159,7 +158,7 @@ body {
     /* 기존 기본 그림자 */
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
     display: block;
-    /* 그림자도 부드럽게 바뀌도록 설정 */
+    /* ★ 그림자도 부드럽게 바뀌도록 설정 */
     transition: box-shadow 0.3s ease;
 }
 
@@ -177,7 +176,7 @@ body {
     /* 제목 스타일 */
     .ppt-text-zone h1 {
         font-size: 3.5rem;
-        color: #ff0088;
+        color: #00ff88;
         margin-top: 0;
         margin-bottom: 25px;
         font-weight: 800;
@@ -188,7 +187,7 @@ body {
     .ppt-text-zone p {
         font-size: 1.5rem;
         line-height: 1.9; /* 가로로 길어진 만큼 가독성을 위해 줄간격 미세 조정 */
-        color: #0f172a;
+        color: #cbd5e1;
         letter-spacing: -0.5px;
         text-align: justify; /* 양끝 정렬 유지 */
     }
@@ -202,7 +201,7 @@ body {
     align-self: center;      /* 세로 중앙 정렬 유지 */
     flex-shrink: 0;          
     
-    /* 마우스를 올리거나 뗄 때 부드럽게 움직이도록 설정 (0.3초 동안) */
+    /* ★ 마우스를 올리거나 뗄 때 부드럽게 움직이도록 설정 (0.3초 동안) */
     transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
