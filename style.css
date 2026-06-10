@@ -232,3 +232,19 @@ body {
         opacity: 0;
     }
 }
+
+#tomato-3d {
+    width: 100%;
+    height: 400px; /* vh 대신 px로 확실하게 높이 부여 */
+    background-color: rgba(0, 0, 0, 0.05); /* 박스 위치 확인용 살짝 흐린 배경 */
+    cursor: grab;
+    display: block;
+}
+
+    #tomato-3d:active {
+        cursor: grabbing;
+    }
+
+.card:nth-child(2) .img-wrapper:hover {
+    transform: none !important;
+}
