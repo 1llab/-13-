@@ -150,7 +150,7 @@ function initTomato3D() {
     tomatoViewer = viewer;
 
     const loader = new THREE.GLTFLoader();
-    loader.load('image/cover2.glb', gltf => {
+    loader.load('cover2.glb', gltf => {
         viewer.tomato = gltf.scene;
         viewer.tomato.scale.set(1.5, 1.5, 1.5);
         viewer.tomato.position.set(0, 0, 0);
