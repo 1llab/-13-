@@ -208,5 +208,3 @@ function resizeTomato3D() {
     tomatoViewer.renderer.setSize(width, height);
     renderTomatoFrame();
 }
-
-
