@@ -75,27 +75,69 @@
                 <span class="close-btn">닫기 ✕</span>
 
                 <div class="ppt-content visual-slide">
-                    <div class="img-wrapper" onclick="burstEmoji(event)">
-                        <img scr="cover3.png" alt="" class="ppt-img">
+                    <div class="img-wrapper pepper-flip-card" onclick="flipPepperImage(event)">
+                        <div class="pepper-flip-inner">
+                            <img src="cover3.png" alt="고추 발표 이미지" class="ppt-img pepper-flip-face pepper-flip-front">
+                            <img src="cover4.png" alt="고추 추가 이미지" class="ppt-img pepper-flip-face pepper-flip-back">
+                        </div>
                     </div>
 
                     <div class="ppt-text-zone">
-                        <h1>03. 고추를 빨간 후추라고 부르는 이유</h1>
-                        <p>영어로 후추는 Pepper, 고추는 Hot Pepper 혹은 Red Pepper다. 심지어 고추를 개량한 피망은 Sweet Pepper... 후추와 고추는 맛으로 보나 생김새로 보나 닮은 구석이 없다. 
-                        콜롬버스는 </p>
+                        <h1>03. 고추가 레드 '페퍼'인 이유</h1>
+                        <p>
+                            영어로 후추는 Pepper, 고추는 Hot Pepper 혹은 Red Pepper다. 심지어 고추를 개량한 피망은 Sweet Pepper... 후추와 고추는 맛으로 보나 생김새로 보나 닮은 구석이 전혀 없다.
+                            콜롬버스는 자신을 적극적으로 후원해준 스페인의 이사벨 여왕에게 보답하고 싶어했다. 그에게 아메리카 대륙은 인도여야 했고, 고추는 후추여야 했기에
+                            뻔히 알면서도 고추를 빨간 후추라고 부른 것이다. 그러나 유럽인들은 고추를 향신료로 받아들이지 않았고,
+                            오히려 아프리카와 아시아 지역에서 독보적 지위의 향신료로 자리매김한다. 뛰어난 요리 보존 효과와 특유의 중독성 덕분이다.
+                            <br><br>
+                            우리 뇌는 캡사이신으로 몸에 이상이 생겼다고 판단하고 엔도르핀을 배출하는데, 이는 진통 작용을 하며 피로와 통증을 완화해주는 효과가 있다. 마약 모르핀과 흡사한 원리로 쾌감을 주는 것이다.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="card" onclick="toggleCard(this)">
-            <div class="card-front"><span class="slide-num">Slide 04</span><h2>네 번째 이야기</h2></div>
-            <div class="card-back"><span class="close-btn">닫기 ✕</span><div class="ppt-content"><h1>04. 본론 내용</h1><p>네 번째 카드 내용입니다.</p></div></div>
+            <div class="card-front"><span class="slide-num">Slide 04</span><h2>양파</h2></div>
+            <div class="card-back">
+                <span class="close-btn">닫기 ✕</span>
+                <div class="ppt-content visual-slide">
+                    <div class="img-wrapper photo-stack" onclick="throwStackPhoto(event)">
+                        <img src="cover5.png" alt="네 번째 이야기 이미지" class="ppt-img stack-photo stack-photo-3">
+                        <img src="cover5.png" alt="네 번째 이야기 이미지" class="ppt-img stack-photo stack-photo-2">
+                        <img src="cover5.png" alt="네 번째 이야기 이미지" class="ppt-img stack-photo stack-photo-1">
+                    </div>
+
+                    <div class="ppt-text-zone">
+                        <h1>04. 양파 알뿌리는 뿌리나 열매가 아니다</h1>
+                        <p>
+                            양파의 둥근 부분을 우리는 '알뿌리'라고 부른다. 그러나 이 부분은 뿌리가 아니다. 식물학에서는 이를 비늘 모양으로 생겼다고 해서 '비늘줄기'라고 부른다.
+                            좀 더 정확히 말하면 줄기는 가장 안쪽에 들어있는 심 같은 것 뿐이고, 차곡차곡 포개진 것은 잎이다.
+                            건조지대에서 살아남기 위해 잎 부분을 두툼하게 만들어 영양분을 저장하는 방식으로 진화한 것이다.
+                            <br><br>
+                            양파를 뜻하는 Onion은 진주를 뜻하는 라틴어 Unio에서 유래했다고 한다. 껍질을 벗긴 양파가 하얘서일까? 여러 층에 겹쳐 쌓인 진주와 닮아서일까?
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="card" onclick="toggleCard(this)">
-            <div class="card-front"><span class="slide-num">Slide 05</span><h2>다섯 번째 이야기</h2></div>
-            <div class="card-back"><span class="close-btn">닫기 ✕</span><div class="ppt-content"><h1>05. 핵심 요약</h1><p>다섯 번째 카드 내용입니다.</p></div></div>
+            <div class="card-front"><span class="slide-num">Slide 05</span><h2>씨앗</h2></div>
+            <div class="card-back grain-slide">
+                <span class="close-btn">닫기 ✕</span>
+                <div class="grain-field" aria-hidden="true"></div>
+                <div class="ppt-content grain-text-zone" onclick="dropCornGrains(event)">
+                    <h1>05. 중노동 하는 탄수화물의 포로</h1>
+                    <p>
+                        농업이 인류가 살아남는 데 필요한 식량을 가져다주는 소중한 수단이 된 것은 분명하다. 하지만 여기에는 중노동이 뒤따랐다. 농업은 식량 문제를 해결했을 뿐만 아니라, 인류가 부의 창출이라는 새로운 개념에 눈을 뜨게 했다.
+                        한 사람이 먹을 수 있는 양에는 한계가 있다. 수렵 채집을 하던 시절엔 어느날 아무리 식량을 손에 얻었어도 몽땅 먹어치울 수 없었다. 욕심을 부려봐야 보관할 방법이 없어 결국 썩어 버릴 뿐이었다.
+                        그러나 식물 씨앗은 좋은 환경에 놓일 때까지 기다리기 위해 식물이 에너지를 비축해둔 곳간이다. 장기간 썩지 않고 생명을 유지하는 특성 때문에 인류는 이를 저장할 수 있었고, 다른 사람에게 나눠줄 수 있게 되었다. 즉, 식량을 넘어 재산이자 분배 가능한 부로 인정받게 된 셈이다.
+                        농사를 짓는 규모가 커지고 수확량이 많아질수록 사람들은 더 많은 부를 축적하게 되고 그만큼 권력도 강해졌다. 사람들은 더 열광적으로 부를 추구하며 농사에 열을 올렸다. 농업이 안겨주는 이점에 빠져든 인류에게 중노동 없이 수렵, 채집, 어로로 삶을 영위하는 시절로 돌아가는 선택지는 없어졌다.
+                        인류는 농업을 기반으로 인구를 꾸준히 늘려 마을을 만들었다. 마을은 더 커져 국가가 되었고, 더 많이 가지기 위해 다툼을 벌였다. 농업이 지금의 인류 꼴을 만든 셈이다.
+                    </p>
+                </div>
+            </div>
         </div>
 
         <div class="card" onclick="toggleCard(this)">
@@ -119,9 +161,10 @@
         </div>
 
     </div>
-    <script src="script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+
+    <script src="script.js"></script>
 </body>
 </html>
