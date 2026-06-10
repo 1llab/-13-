@@ -27,7 +27,7 @@ function burstEmoji(event) {
     event.stopPropagation();
 
     const emojiCount = 13;
-    const emojiType = '?쪛';
+    const emojiType = '🥔';
     const clickX = event.clientX;
     const clickY = event.clientY;
 
@@ -157,7 +157,7 @@ function initTomato3D() {
         scene.add(viewer.tomato);
         renderTomatoFrame();
     }, undefined, error => {
-        console.error('3D 紐⑤뜽??遺덈윭?ㅻ뒗 以??ㅻ쪟媛 諛쒖깮?덉뒿?덈떎:', error);
+        console.error('3D 오류 났음', error);
     });
 
     window.addEventListener('resize', resizeTomato3D);
