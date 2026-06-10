@@ -48,21 +48,44 @@
                 <span class="close-btn">닫기 ✕</span>
 
                 <div class="ppt-content visual-slide">
-                    <div class="img-wrapper" onclick="burstEmoji(event)">
-                        <img src="cover1.png" alt="발표 시각 자료" class="ppt-img">
+                    <div class="img-wrapper">
+                        <div id="tomato-3d" onmousedown="event.stopPropagation()" onmouseup="event.stopPropagation()"></div>
                     </div>
 
                     <div class="ppt-text-zone">
-                        <h1>02. 몰입의 순간</h1>
-                        <p>여기에 두 번째 장의 내용을 입력하세요. 데스크톱 화면에서 가독성이 아주 좋습니다.</p>
+                        <h1>02. 케첩의 원조는 토마토가 아니다</h1>
+                        <p>
+                            독이 들었다며 감자와 함께 200년 간 유럽에서 식용작물로 인정받지 못하던 토마토. 이런 토마토를 유럽인들 뱃속으로 넣는 데에 기여한 것은 바로 케첩이다.
+                            고대 중국에서 생선을 발효시켜 만든 Kě-Chiap(어장魚醬)은 생선 소스 혹은 액젓 정도로 볼 수 있다. 이런 '어장'은 동남아로 전해지며 케첩이라고 불렸고,
+                            유럽인이 이를 맛보게 된 것이다. 그들은 다양한 어패류와 버섯, 과일을 활용해 맛을 흉내냈고 그렇게 만든 조미료를 또 케첩이라 불렀다.
+                            미국으로 이주한 영국인들은 식재료가 한정적인 신대륙에서 케첩을 만들고자 애를 썼다. 그 때 그들의 눈에 든 게 어디서나 볼 수 있는 토마토였고 결국 토마토 케첩이 탄생한다.
+                            감자튀김, 햄버거, 오믈렛 등 미국인들이 특히 좋아하는 음식들엔 다량의 케첩이 사용되곤 한다.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="card" onclick="toggleCard(this)">
-            <div class="card-front"><span class="slide-num">Slide 03</span><h2>세 번째 이야기</h2></div>
-            <div class="card-back"><span class="close-btn">닫기 ✕</span><div class="ppt-content"><h1>03. 본론 내용</h1><p>세 번째 카드 내용입니다.</p></div></div>
+            <div class="card-front">
+                <span class="slide-num">Slide 03</span>
+                <h2>고추</h2>
+            </div>
+            <div class="card-back">
+                <span class="close-btn">닫기 ✕</span>
+
+                <div class="ppt-content visual-slide">
+                    <div class="img-wrapper" onclick="burstEmoji(event)">
+                        <img scr="cover3.png" alt="" class="ppt-img">
+                    </div>
+
+                    <div class="ppt-text-zone">
+                        <h1>03. 고추를 빨간 후추라고 부르는 이유</h1>
+                        <p>영어로 후추는 Pepper, 고추는 Hot Pepper 혹은 Red Pepper다. 심지어 고추를 개량한 피망은 Sweet Pepper... 후추와 고추는 맛으로 보나 생김새로 보나 닮은 구석이 없다. 
+                        콜롬버스는 </p>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="card" onclick="toggleCard(this)">
@@ -97,5 +120,8 @@
 
     </div>
     <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
 </body>
 </html>
